@@ -4,10 +4,10 @@ spring:
     name: Liquibase POC
   # Jpa Properties
   datasource:
-    url: jdbc:mysql://localhost:3306/liquibasepoc
+    url: jdbc:mysql://localhost:3306/lqpoc
     username: root
-    password: root
-    driver-class-name: com.mysql.jdbc.Driver
+    password: Chandu!1
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
@@ -15,5 +15,6 @@ spring:
 
   # Liquibase properties
   liquibase:
-    enabled: false
+    enabled: true
+    change-log: /db/db.changelog-dev.xml
 

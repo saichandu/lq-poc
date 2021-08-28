@@ -1,0 +1,5 @@
+com\lqpoc\LqPocApplication.class
+com\lqpoc\entities\Person$PersonBuilder.class
+com\lqpoc\entities\Person.class
+com\lqpoc\controller\PersonController.class
+com\lqpoc\repository\PersonRepository.class

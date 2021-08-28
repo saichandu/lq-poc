@@ -1,0 +1,26 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="changelog-4.0" author="saichandu">
+        <rollback>
+            <dropTable tableName="ADDRESS"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="changelog-4.1" author="saichandu">
+        <insert tableName="PERSON">
+            <column name="NAME" value="Lita"/>
+            <column name="PHONE" value="3173343889"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="changelog-4.2" author="saichandu">
+        <preConditions onFail="WARN">
+            <sqlCheck expectedResult="2">select count(*) from PERSON</sqlCheck>
+        </preConditions>
+        <comment>Verify if data loaded in PERSON table
+        </comment>
+    </changeSet>
+</databaseChangeLog>

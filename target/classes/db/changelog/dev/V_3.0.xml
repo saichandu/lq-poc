@@ -1,0 +1,22 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="changelog-3.0" author="saichandu" dbms="mysql" runInTransaction="true">
+
+        <createProcedure dbms="mysql" encoding="UTF-8"
+                         path="procedures/procedure-1.sql"
+                         procedureName="person_alter_column" relativeToChangelogFile="true">
+        </createProcedure>
+        <sql>call person_alter_column() </sql>
+    </changeSet>
+    <!--<changeSet id="changelog-3.0" author="saichandu" runOnChange="true" runInTransaction="true">
+        <sqlFile path="procedures/procedure-1.sql"
+                 encoding="UTF-8"
+                 relativeToChangelogFile="true"
+                 endDelimiter=";"
+                 splitStatements="true"/>
+
+    </changeSet>-->
+</databaseChangeLog>

@@ -1,0 +1,27 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="changelog-2.0" author="saichandu">
+        <addColumn tableName="PERSON">
+            <column name="CREATED_DT" type="datetime" valueDate="current_datetime" defaultValueDate="current_datetime">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet id="changelog-2.1" author="saichandu">
+        <dropPrimaryKey tableName="PERSON" constraintName="PERSON_PK1"/>
+        <addPrimaryKey tableName="PERSON" columnNames="NAME,PHONE" constraintName="PERSON_PK1"/>
+    </changeSet>
+    <changeSet id="changelog-2.2" author="saichandu">
+        <createTable tableName="ADDRESS">
+            <column name="ID" type="NUMERIC">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="CITY" type="TEXT"/>
+            <column name="STATE" type="TEXT"/>
+            <column name="COUNTRY" type="TEXT"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

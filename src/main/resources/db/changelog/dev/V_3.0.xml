@@ -19,17 +19,4 @@
                  splitStatements="true"/>
 
     </changeSet>-->
-    <changeSet id="changelog-3.1" author="saichandu">
-        <rollback>
-            <dropTable tableName="ADDRESS"/>
-        </rollback>
-    </changeSet>
-
-    <changeSet id="changelog-3.2" author="saichandu">
-        <preConditions onFail="WARN">
-            <sqlCheck expectedResult="0">select count(*) from PERSON</sqlCheck>
-        </preConditions>
-        <comment>Verify if no data loaded in PERSON table
-        </comment>
-    </changeSet>
 </databaseChangeLog>

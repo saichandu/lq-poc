@@ -33,9 +33,9 @@ public class Person implements Serializable {
     @Column(name = "phone")
     private String phone;
 
-    @Column(name = "country_code")
-    private int countryCode;
-
     @Column(name = "created_dt")
     private Date createdDt;
+
+    @Column(name = "country_code")
+    private Integer countryCode;
 }

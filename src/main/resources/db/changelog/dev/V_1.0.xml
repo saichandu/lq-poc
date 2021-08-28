@@ -5,17 +5,17 @@
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
     <preConditions onFail="WARN">
         <and>
-            <dbms type="msql"/>
-            <runningAs username="lq-poc"/>
+            <dbms type="mysql"/>
+            <runningAs username="root"/>
         </and>
     </preConditions>
 
     <changeSet author="saichandu" id="changelog-1.0">
         <createTable tableName="PERSON">
-            <column name="NAME" type="TEXT">
+            <column name="NAME" type="VARCHAR2(50)">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="PERSON_PK1"/>
             </column>
-            <column name="PHONE" type="TEXT">
+            <column name="PHONE" type="VARCHAR2(10)">
                 <constraints nullable="true" primaryKey="false" unique="false"/>
             </column>
         </createTable>
