@@ -1,0 +1,19 @@
+# Application Properties
+spring:
+  application:
+    name: Liquibase POC
+  # Jpa Properties
+  datasource:
+    url: jdbc:mysql://localhost:3306/liquibasepoc
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+  # Liquibase properties
+  liquibase:
+    enabled: false
+
